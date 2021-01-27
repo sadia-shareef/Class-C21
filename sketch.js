@@ -1,41 +1,24 @@
-var a,b;
+var ob2, ob1,a,b;
 
 function setup() {
-  createCanvas(800,400);
- a=createSprite(600, 200, 50, 50);
- b=createSprite(400, 200, 30, 30);
-a.shapeColor="green";
-b.shapeColor="green";
+  createCanvas(1200,800);
+  ob2 = createSprite(600, 400, 50, 80);
+  ob2.shapeColor = "green";
+  ob2.debug = true;
+  ob1 = createSprite(400,400,80,30);
+  ob1.shapeColor = "green";
+  ob1.debug = true;
+  ob1.velocityX=4;
+  a = createSprite(600, 200, 50, 80);
+  a.shapeColor = "pink";
+  b = createSprite(400, 200, 50, 80);
+  b.shapeColor = "purple";
 }
 
 function draw() {
-  background(255,255,255);
-  a.y=World.mouseY;
-  a.x=World.mouseX;
-if(a.x-b.x<a.width/2+b.width/2 && b.x-a.x<a.width/2+b.width/2 ){
-a.shapeColor="red";
-b.shapeColor="red";
+  background(0,0,0);  
+  bounceOff(ob1,ob2);
 
-}
-else{
-a.shapeColor="green";
-b.shapeColor="green";
-}
-if(a.y-b.y<a.height/2+b.height/2 && b.y-a.y<a.height/2+b.height/2 ){
-  a.shapeColor="red";
-  b.shapeColor="red";
-  
-  }
-  else{
-  a.shapeColor="green";
-  b.shapeColor="green";
-  }
-  
-
-
-
-
-
+ 
   drawSprites();
 }
-
